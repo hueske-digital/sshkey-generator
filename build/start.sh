@@ -22,6 +22,7 @@ echo 'Host *' > config
 echo '    ServerAliveInterval 60' >> config
 echo '    ServerAliveCountMax 240' >> config
 echo '    StrictHostKeyChecking no' >> config
+echo '    UserKnownHostsFile /root/.ssh/known_hosts' >> config
 
 # Falls die Umgebungsvariablen gesetzt sind, Host-Eintrag hinzufügen
 if [ -n "$SSH_HOST" ] && [ -n "$SSH_HOSTNAME" ] && [ -n "$SSH_USER" ]; then
