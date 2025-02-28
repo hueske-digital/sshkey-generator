@@ -3,9 +3,10 @@
 if [ ! -f id_ed25519 ]; then
     ssh-keygen -t ed25519 -f id_ed25519 -q -N ''
 
-    echo 'ServerAliveInterval 60' > config
-    echo 'ServerAliveCountMax 240' >> config
-    echo 'StrictHostKeyChecking no' >> config
+    echo 'Host *' > config
+    echo '    ServerAliveInterval 60' >> config
+    echo '    ServerAliveCountMax 240' >> config
+    echo '    StrictHostKeyChecking no' >> config
 
     echo 'SSH keys generated.'
 else
