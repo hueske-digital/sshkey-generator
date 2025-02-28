@@ -13,6 +13,10 @@ chmod 700 .
 chmod 600 id_ed25519
 chmod 644 id_ed25519.pub
 
+# Stelle sicher, dass die Datei known_hosts existiert
+touch known_hosts
+chmod 644 known_hosts
+
 # SSH-Config neu schreiben
 echo 'Host *' > config
 echo '    ServerAliveInterval 60' >> config
