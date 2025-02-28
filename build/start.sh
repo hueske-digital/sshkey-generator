@@ -25,11 +25,12 @@ echo '    StrictHostKeyChecking no' >> config
 echo '    UserKnownHostsFile /root/.ssh/known_hosts' >> config
 
 # Falls die Umgebungsvariablen gesetzt sind, Host-Eintrag hinzufügen
-if [ -n "$SSH_HOST" ] && [ -n "$SSH_HOSTNAME" ] && [ -n "$SSH_USER" ]; then
+if [ -n "$SSH_HOST" ] && [ -n "$SSH_HOSTNAME" ] && [ -n "$SSH_USER" ] && [ -n "$SSH_PORT" ]; then
     echo "" >> config
     echo "Host $SSH_HOST" >> config
     echo "    Hostname $SSH_HOSTNAME" >> config
     echo "    User $SSH_USER" >> config
+    echo "    Port $SSH_PORT" >> config
     echo "Custom SSH host entry added."
 fi
 
